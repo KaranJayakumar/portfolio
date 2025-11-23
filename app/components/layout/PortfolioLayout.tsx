@@ -4,9 +4,7 @@ interface LayoutProps{
 }
 export const PortfolioLayout = ({ children } : LayoutProps) => {
   return (
-    <div className="w-[50vw] justify-self-center justify-center align-center">
-      {children}
-    </div>
+    <div className="flex h-full w-full py-[50px] pl-[25vw] pr-[25vw]">{children}</div>
   )
 }
 

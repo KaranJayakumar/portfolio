@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export const NavigationBar = () => {
   return (
     <div className="flex border justify-between">
@@ -11,11 +13,10 @@ export const NavigationBar = () => {
       <div>
       Work
       </div>
-      <div>
-      Resume
+      <div className="justify-items-center align-middle flex">
+      <img src="/icons/download.svg" alt="hello" width={14} height={14}/>
       </div>
     </div>
     </div>
   )
 }
-

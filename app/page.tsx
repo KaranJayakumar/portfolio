@@ -1,5 +1,5 @@
 "use client"
-import { PortfolioLayout } from "./components/layout/PortfolioLayout";
+import { PortfolioLayout } from "./_components/layout/PortfolioLayout";
 
 export default function Home() {
   const openEesel = () => {
@@ -69,13 +69,13 @@ export default function Home() {
 
         <div className="font-normal flex-col text-sm pt-[40px] mt-[40px] border-t border-gray-200" id="footer">
           <p className="pb-[8px]">
-            <a href="https://linkedin.com/in/karan" className="underline hover:text-gray-600">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/karan-jayakumar-v2048/" className="underline hover:text-gray-600">LinkedIn</a>
             {" · "}
             <a href="https://github.com/KaranJayakumar" className="underline hover:text-gray-600">GitHub</a>
             {" · "}
             <a href="#" className="underline hover:text-gray-600">Resume</a>
             {" · "}
-            <a href="mailto:karan@example.com" className="underline hover:text-gray-600">Chat</a>
+            <a href="mailto:karanjaykumar@gmail.com" className="underline hover:text-gray-600">Chat</a>
           </p>
         </div>
       </div>

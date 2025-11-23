@@ -8,6 +8,9 @@ export default function Home() {
   const openSindy = () => {
     window.open("https://sindy.ai", "_blank")
   }
+  const openRemember = () => {
+    window.open("https://github.com/KaranJayakumar/remember", "_blank")
+  }
   return (
     <PortfolioLayout>
       <div>
@@ -15,45 +18,65 @@ export default function Home() {
           <p className="pb-[4px]">Karan Jayakumar</p>
         </div>
         <div className="font-normal flex-col text-sm" id="about">
-          <p>I&apos;m a software engineer at <span className="underline cursor-pointer" onClick={() => openEesel()}>eesel AI</span>. Previously, I worked at the University of Melbourne and a now defunct ed-tech startup called <span className="underline cursor-pointer" onClick={() => openSindy()}>Sincidium</span>. I specialise in Python, React/Next and Java . I&apos;m currently exploring Golang and React Native and attempting to build my own Mobile App. Generally, I love all things startups and hope to build my own company in the future and love to learn about tech in order to do that. </p>
+          <p>I&apos;m a software engineer at <span className="underline cursor-pointer" onClick={() => openEesel()}>eesel AI</span>. Previously, I worked at the University of Melbourne and a now defunct ed-tech startup called <span className="underline cursor-pointer" onClick={() => openSindy()}>Sincidium</span>. I specialise in Python, React/Next and Java . I&apos;m currently exploring Golang and React Native and attempting to build my own <span className="underline cursor-pointer" onClick={() => openRemember()}>mobile app</span>. Generally, I love all things startups and hope to build my own company in the future and love to learn about tech in order to do that. </p>
         </div>
-        <div className="font-bold flex-col py-[10px] pt-[20px]" id="blog">
-          <p className="pb-[4px]">Blog</p>
-        </div>
-        <div className="font-normal flex-col text-sm" id="blog-content">
-          <p className="pb-2">I enjoy blogging about the tech stuff I learn. Check out a few of my blogs here.</p>
-          <ul>
-            <li>
-              Blog 1
-            </li>
-            <li>
-              Blog 2
-            </li>
-            <li>
-              Blog 3
-            </li>
+        <div className="flex-col py-[10px] pt-[20px]" id="hobbies">
+          <p className="pb-[4px] font-bold">Experience</p>
+          <ul className="text-sm space-y-2 list-disc">
+            <div className="px-4">
+              <li>
+              eesel AI : Full-Stack Software Engineer
+              </li>
+              <li>
+              Sincidum : Software Engineer Intern
+              </li>
+              <li>
+              University of Melbourne : IT/Web Support Intern -&gt; Research Assistant
+              </li>
+            </div>
           </ul>
         </div>
-
-        <div className="font-bold flex-col py-[10px] pt-[20px]" id="hobbies">
-          <p className="pb-[4px]">Hobbies</p>
-        </div>
-        <div className="font-normal flex-col text-sm" id="hobbies-content">
-          <p>Basketball enthusiast - love following the NBA and playing when I can.</p>
-          <p className="pt-[8px]">Play the piano occasionally, always looking to improve.</p>
-          <p className="pt-[8px]">Passionate about building things and exploring startup ideas.</p>
-        </div>
-        <div className="font-bold flex-col py-[10px] pt-[20px]" id="events">
-          <p className="pb-[4px]">Events</p>
-        </div>
-        <div className="font-normal flex-col text-sm" id="events-content">
-          <p>Check back for upcoming events and talks I&apos;ll be attending or speaking at.</p>
+        <div className="flex-col py-[10px] pt-[20px]" id="events">
+          <p className="pb-[4px] font-bold">Events</p>
+          A few events I&apos;ve been frequenting lately and enjoyed. 
+          <ul className="text-sm space-y-2 list-disc">
+            <div className="px-4">
+              <li>
+              eesel AI : Full-Stack Software Engineer
+              </li>
+              <li>
+              Sincidum : Software Engineer Intern
+              </li>
+              <li>
+              University of Melbourne : IT/Web Support Intern -&gt; Research Assistant
+              </li>
+            </div>
+          </ul>
         </div>
         <div className="font-bold flex-col py-[10px] pt-[20px]" id="events">
           <p className="pb-[4px]">Projects</p>
+          <ul className="text-sm space-y-2 list-disc">
+            <div className="px-4">
+              <li>
+              Remember
+              </li>
+              <li>
+              Messager
+              </li>
+            </div>
+          </ul>
         </div>
-        <div className="font-normal flex-col text-sm" id="events-content">
-          <p>Check back for upcoming events and talks I&apos;ll be attending or speaking at.</p>
+
+        <div className="font-normal flex-col text-sm pt-[40px] mt-[40px] border-t border-gray-200" id="footer">
+          <p className="pb-[8px]">
+            <a href="https://linkedin.com/in/karan" className="underline hover:text-gray-600">LinkedIn</a>
+            {" · "}
+            <a href="https://github.com/KaranJayakumar" className="underline hover:text-gray-600">GitHub</a>
+            {" · "}
+            <a href="#" className="underline hover:text-gray-600">Resume</a>
+            {" · "}
+            <a href="mailto:karan@example.com" className="underline hover:text-gray-600">Chat</a>
+          </p>
         </div>
       </div>
     </PortfolioLayout>

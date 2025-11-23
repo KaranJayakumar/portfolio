@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto} from "next/font/google";
 import "./globals.css";
+import { PortfolioLayout } from "./_components/layout/PortfolioLayout";
 
 const font = Roboto({
   weight : "400",
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body
         className={`${font.className} flex-col antialiased justify-center items-center h-full`}
       >
-        {children}
+        <PortfolioLayout>
+          {children}
+        </PortfolioLayout>
       </body>
     </html>
   );

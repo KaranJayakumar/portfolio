@@ -1,6 +1,7 @@
 "use client"
 import { Footer } from "./_components/layout/Footer";
 import { PortfolioLayout } from "./_components/layout/PortfolioLayout";
+import Link from "next/link";
 
 export default function Home() {
   const openEesel = () => {
@@ -13,7 +14,6 @@ export default function Home() {
     window.open("https://github.com/KaranJayakumar/remember", "_blank")
   }
   return (
-    <PortfolioLayout>
       <div>
         <div className="font-bold flex-col py-[10px]" id="title-card">
           <p className="pb-[4px]">Karan Jayakumar</p>
@@ -25,8 +25,10 @@ export default function Home() {
           <p className="pb-[4px] font-bold">Experience</p>
           <ul className="text-sm space-y-2 list-disc">
             <div className="px-4">
-              <li>
+              <li className="underline cursor-pointer">
+              <Link href='/experience/eesel'>
               eesel AI : Full-Stack Software Engineer
+              </Link>
               </li>
               <li>
               Sincidum : Software Engineer Intern
@@ -69,6 +71,5 @@ export default function Home() {
         </div>
       <Footer/>
       </div>
-    </PortfolioLayout>
   );
 }

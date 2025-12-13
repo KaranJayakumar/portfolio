@@ -1,7 +1,8 @@
+import { Block } from "../layout/Block"
+
 export const Projects = () => {
   return (
-    <div className="font-bold flex-col py-[10px] pt-[20px]" id="events">
-      <p className="pb-[4px]">Projects</p>
+    <Block title="Projects">
       <ul className="text-sm space-y-2 list-disc">
         <div className="px-4">
           <li>
@@ -12,7 +13,7 @@ export const Projects = () => {
           </li>
         </div>
       </ul>
-    </div>
+    </Block>
   )
 }
 

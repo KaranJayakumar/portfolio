@@ -1,7 +1,8 @@
+import { Block } from "../layout/Block"
+
 export const Events = () => {
   return (
-    <div className="flex-col py-[10px] pt-[20px]" id="events">
-      <p className="pb-[4px] font-bold">Events</p>
+    <Block title="Events">
       <p className="pb-[8px] text-sm">A few communities and events I&apos;ve been frequenting lately and enjoyed.</p>
       <ul className="text-sm space-y-2 list-disc">
         <div className="px-4">
@@ -16,7 +17,7 @@ export const Events = () => {
           </li>
         </div>
       </ul>
-    </div>
+    </Block>
   )
 }
 

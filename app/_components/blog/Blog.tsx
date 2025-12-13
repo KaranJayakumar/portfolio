@@ -1,38 +1,13 @@
 "use server"
 import { promises as fs } from 'fs';
-import { useRouter } from 'next/router';
 import path from 'path'
+import { BlogListItem } from './BlogListItem';
 
 interface Blog{
   key : string
   title : string
   description : string
   content : string
-}
-
-interface ListItemProps{
-  blog : Blog
-}
-export const BlogListItem = async ({ blog } : ListItemProps) => {
-  const openBlog = () => {
-    window.open(`/blogs/${blog.key}`)
-
-  }
-  return (
-    <div>
-      <div className="font-bold flex-col py-[10px] cursor-pointer" 
-        id="blog-title" onClick={() => openBlog()}>
-        <p className="pb-[4px]">{blog.title}</p>
-      </div>
-        <div className="font-normal flex-col text-sm" id="blog-list">
-          <p>
-            <p className="text-gray-600">
-            {blog.description}
-            </p>
-          </p>
-        </div>
-    </div>
-  )
 }
 
 export const BlogList = async () => {

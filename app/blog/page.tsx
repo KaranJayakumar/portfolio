@@ -1,8 +1,5 @@
-import { PortfolioLayout } from "../components/layout/PortfolioLayout";
-
 export default function Blog() {
   return (
-    <PortfolioLayout>
       <div>
         <div className="font-bold flex-col py-[10px]" id="blog-title">
           <p className="pb-[4px]">Blog</p>
@@ -15,6 +12,5 @@ export default function Blog() {
           </p>
         </div>
       </div>
-    </PortfolioLayout>
   );
 }

@@ -1,3 +1,7 @@
+"use client"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+
 export const NavigationBar = () => {
   return (
       <div className="flex flex-row justify-between mb-16 ">
@@ -5,11 +9,21 @@ export const NavigationBar = () => {
           <p>{"Karan Jaykumar"}</p>
         </div>
         <div className="flex flex-row gap-8">
-          <p>{"Experience"}</p>
-          <p>{"Writing"}</p>
-          <p>{"Contact"}</p>
+          <NavItem title="Experience" path="/"/>
+          <NavItem title="Blog" path="/blog"/>
+          <NavItem title="Contact" path="/"/>
         </div>
       </div>
   )
 }
 
+interface NavItemProps {
+  title : string
+  path : string
+}
+
+const NavItem = ({title, path} : NavItemProps) => {
+  return (
+    <Link href={path}>{title}</Link>
+  )
+}

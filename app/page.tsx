@@ -3,13 +3,10 @@ import { About } from "./_components/blocks/About";
 import { Events } from "./_components/blocks/Events";
 import { Projects } from "./_components/blocks/Projects";
 import { ExperienceItem,ExperienceLayout } from "./_components/layout/ExperienceLayout";
-import { Footer } from "./_components/layout/Footer";
-import { Header } from "./_components/layout/Header";
 
 export default function Home() {
   return (
     <>
-      <Header/>
       <About/>
       <ExperienceLayout>
         <ExperienceItem position="Full-Stack Software Engineer" description="eesel AI, Melbourne VIC" timeline="Aug 2024 - Present"/>
@@ -19,7 +16,6 @@ export default function Home() {
       </ExperienceLayout>
       <Events/>
       <Projects/>
-      <Footer/>
     </>
   );
 }

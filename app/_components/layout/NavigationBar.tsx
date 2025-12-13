@@ -6,11 +6,11 @@ export const NavigationBar = () => {
   return (
       <div className="flex flex-row justify-between mb-16 ">
         <div>
-          <p>{"Karan Jaykumar"}</p>
+          <NavItem title="Karan Jayakumar" path="/"/>
         </div>
         <div className="flex flex-row gap-8">
           <NavItem title="Experience" path="/"/>
-          <NavItem title="Blog" path="/blog"/>
+          <NavItem title="Blog" path="/blogs"/>
           <NavItem title="Contact" path="/"/>
         </div>
       </div>

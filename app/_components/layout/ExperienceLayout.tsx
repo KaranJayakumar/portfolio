@@ -27,7 +27,7 @@ interface ItemProps {
 export const ExperienceItem = ({position, description, timeline} : ItemProps) => {
   return (
     <div className="flex flex-row gap-2 justify-between">
-      <div className="flex flex-col">
+      <div className="flex flex-col mr-16">
         <p className="font-semibold">
           {position}
         </p>

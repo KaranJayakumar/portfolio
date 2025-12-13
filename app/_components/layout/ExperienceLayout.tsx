@@ -6,17 +6,40 @@ interface LayoutProps{
 
 export const ExperienceLayout = ({children} : LayoutProps) => {
   return (
-    <div className="" id="about">
-      {children}
+    <div className="flex flex-col gap-4 my-24">
+      <div className="flex flex-row justify-between">
+        <div>
+          <p>{"Experience"}</p>
+        </div>
+        <div>
+          {children}
+        </div>
+      </div>
     </div>
   )
 }
 
-export const ExperienceItem = ({children} : LayoutProps) => {
+interface ItemProps {
+  position : string
+  description : string
+  timeline : string
+}
+export const ExperienceItem = ({position, description, timeline} : ItemProps) => {
   return (
-    <div className="font-normal flex-col text-sm" id="about">
-      {children}
+    <div className="flex flex-row gap-2 justify-between">
+      <div className="flex flex-col">
+        <p className="font-semibold">
+          {position}
+        </p>
+        <p>
+          {description}
+        </p>
+      </div>
+      <div>
+        <p>
+          {timeline}
+        </p>
+      </div>
     </div>
   )
 }
-

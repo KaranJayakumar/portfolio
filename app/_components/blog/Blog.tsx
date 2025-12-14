@@ -3,13 +3,6 @@ import { promises as fs } from 'fs';
 import path from 'path'
 import { BlogListItem } from './BlogListItem';
 
-interface Blog{
-  key : string
-  title : string
-  description : string
-  content : string
-}
-
 export const BlogList = async () => {
   const blogs = await loadBlogs()
   return (

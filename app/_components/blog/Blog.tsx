@@ -14,28 +14,3 @@ export const BlogList = async () => {
     )
   )
 }
-
-async function loadBlogs() : Promise<Blog[]> {
-  try{
-    const files = await fs.readdir(process.cwd() + '/static/blogs')
-    const results = []
-    for(let i = 0; i < files.length; i++){
-      const file = files[i]
-      if(path.extname(file) == ".json"){
-         const fileContent = await fs.readFile(process.cwd() + '/static/blogs/' + file, 'utf8');
-         const blogData = JSON.parse(fileContent);
-         const blog : Blog = {
-           key : blogData.key,
-           title : blogData.title,
-           description : blogData.description,
-           content : blogData.content,
-         }
-         results.push(blog)
-      }
-    }
-    return results
-  }catch(e){
-    console.error("Error retrieving blogs", e)
-    return []
-  }
-}

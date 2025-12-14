@@ -1,13 +1,7 @@
 "use client";
 
+import { Blog } from "@/app/types";
 import { useRouter } from "next/navigation";
-
-interface Blog {
-  key: string;
-  title: string;
-  description: string;
-  content: string;
-}
 
 interface ListItemProps {
   blog: Blog;

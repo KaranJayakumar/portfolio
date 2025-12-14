@@ -1,6 +1,7 @@
 import path from 'path'
 import { promises as fs } from 'fs';
 import { Blog } from '../types/index'
+import matter from 'gray-matter';
 
 export async function loadBlog(key : string) : Promise<Blog | null> {
   try{
@@ -8,17 +9,14 @@ export async function loadBlog(key : string) : Promise<Blog | null> {
       key += '.md'
     }
      const fileContent = await fs.readFile(process.cwd() + '/files/blogs/' + `${key}`, 'utf8');
-     const blogData = JSON.parse(fileContent);
-     if(blogData.key === key){
-       const blog : Blog = {
-         key : blogData.key,
-         title : blogData.title,
-         description : blogData.description,
-         content : blogData.content,
-       }
-       return blog
+     const blogData = matter(fileContent);
+     const blog : Blog = {
+       key : blogData.data.key,
+       title : blogData.data.title,
+       description : blogData.data.description,
+       content : blogData.content,
      }
-     return null
+     return blog
   }catch(e){
     console.error("Error retrieving blogs", e)
     return null
@@ -27,13 +25,14 @@ export async function loadBlog(key : string) : Promise<Blog | null> {
 
 export async function loadBlogs() : Promise<Blog[]> {
   try{
-    const files = await fs.readdir(process.cwd() + '/static/blogs')
-    const results = []
+    const files = await fs.readdir(process.cwd() + '/files/blogs')
+    const results: Blog[] = []
     for(let i = 0; i < files.length; i++){
       const file = files[i]
-      if(path.extname(file) == ".json"){
-        if(loadBlog(file) != null){
-           results.push(loadBlog(file))
+      if(path.extname(file) == ".md"){
+        const blog = await loadBlog(file)
+        if(blog){
+           results.push(blog)
         }
       }
     }

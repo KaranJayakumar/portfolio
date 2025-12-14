@@ -1,7 +1,6 @@
 "use server"
-import { promises as fs } from 'fs';
-import path from 'path'
 import { BlogListItem } from './BlogListItem';
+import { loadBlogs } from '@/app/utils/parsing';
 
 export const BlogList = async () => {
   const blogs = await loadBlogs()

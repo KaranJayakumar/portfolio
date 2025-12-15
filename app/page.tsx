@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <About/>
       <ExperienceLayout>
-        <ExperienceItem position="Full-Stack Software Engineer" description="eesel AI, Melbourne VIC" timeline="Aug 2024 - Present"/>
+        <ExperienceItem position="Full-Stack Software Engineer" description="eesel AI, Melbourne VIC" timeline="Aug 2024 - Present" blogKey={'ai_models'}/>
         <ExperienceItem position="Software Engineer Intern" description="Sincidium, Melbourne VIC" timeline="Jun 2024 - Aug 2024"/>
         <ExperienceItem position="Research Assistant" description="University of Melbourne, Melbourne VIC" timeline="Jan 2024 - Jun 2024"/>
         <ExperienceItem position="IT/Web Support Intern" description="University of Melbourne, Melbourne VIC" timeline="Jun 2023 - Jan 2024"/>

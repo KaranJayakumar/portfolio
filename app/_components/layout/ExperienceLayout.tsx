@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation"
 import { ReactNode } from "react"
 
 interface LayoutProps{
@@ -23,15 +25,25 @@ interface ItemProps {
   position : string
   description : string
   timeline : string
+  blogKey? : string
 }
-export const ExperienceItem = ({position, description, timeline} : ItemProps) => {
+export const ExperienceItem = ({position, description, timeline, blogKey} : ItemProps) => {
+  const router = useRouter();
+  const openBlog = () => {
+    if(blogKey){
+      router.push(`/blogs/${blogKey}`)
+    }
+    return
+  }
   return (
     <div className="flex flex-row justify-between gap-x-2 mb-4 text-sm">
       <div className="flex flex-col mr-26">
-        <p className="font-semibold">
+        <p className={`font-semibold ${blogKey? 'cursor-pointer' : ''}`} 
+          onClick={() => {openBlog()}}>
           {position}
         </p>
-        <p>
+        <p className={`${blogKey? 'cursor-pointer' : ''}`} 
+          onClick={() => {openBlog()}}>
           {description}
         </p>
       </div>

@@ -16,6 +16,7 @@ export async function loadBlog(key : string) : Promise<Blog | null> {
        description : blogData.data.description,
        content : blogData.content,
        date : blogData.data.date,
+       tags : blogData.data.tags,
      }
      return blog
   }catch(e){

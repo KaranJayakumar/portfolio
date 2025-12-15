@@ -4,4 +4,5 @@ export interface Blog{
   description : string
   content : string
   date : string
+  tags? : string[]
 }

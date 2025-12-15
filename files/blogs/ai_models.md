@@ -1,6 +1,10 @@
 ---
 key: ai_models
 title: Using AI as a Dev
+tags:
+    - jooasdf
+    - jaksdfjl
+    - jalskdfj
 description: My personal thoughts on how AI is shaping the dev world from working at a startup.
 ---
 

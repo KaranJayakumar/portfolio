@@ -21,7 +21,7 @@ export function BlogListItem({ blog }: ListItemProps) {
       {
         blog.tags?.map((tag, index) => {
           return (
-            <Badge key={index} className='rounded-lg border border-black mr-2 text-xs'>{tag}</Badge>
+            <Badge key={index} className='mt-2 rounded-lg border border-gray-400 mr-2 text-xs bg-white text-black font-thin'>{tag}</Badge>
           )
         })
       }

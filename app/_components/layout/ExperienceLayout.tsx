@@ -5,6 +5,7 @@ import { ReactNode } from "react"
 interface LayoutProps{
   children : ReactNode
 }
+import { ExternalLinkIcon } from "lucide-react"
 
 export const ExperienceLayout = ({children} : LayoutProps) => {
   return (
@@ -27,31 +28,51 @@ interface ItemProps {
   timeline : string
   blogKey? : string
 }
-export const ExperienceItem = ({position, description, timeline, blogKey} : ItemProps) => {
-  const router = useRouter();
+export const ExperienceItem = ({
+  position,
+  description,
+  timeline,
+  blogKey
+}: ItemProps) => {
+  const router = useRouter()
+
   const openBlog = () => {
-    if(blogKey){
+    if (blogKey) {
       router.push(`/blogs/${blogKey}`)
     }
-    return
   }
+
   return (
-    <div className="flex flex-row justify-between gap-x-2 mb-4 text-sm">
+    <div
+      className={`flex flex-row justify-between gap-x-2 mb-4 text-sm ${
+        blogKey ? "cursor-pointer group" : ""
+      }`}
+      onClick={openBlog}
+    >
       <div className="flex flex-col mr-26">
-        <p className={`font-semibold ${blogKey? 'cursor-pointer' : ''}`} 
-          onClick={() => {openBlog()}}>
+        <div
+          className={`font-semibold items-center gap-x-2 flex flex-row${
+            blogKey ? "group-hover:underline" : ""
+          }`}
+        >
           {position}
-        </p>
-        <p className={`${blogKey? 'cursor-pointer' : ''}`} 
-          onClick={() => {openBlog()}}>
+          {blogKey && (
+            <ExternalLinkIcon width={14} height={14} className='pb-0.5'/>
+          )}
+        </div>
+        <p
+          className={`text-muted-foreground ${
+            blogKey ? "group-hover:text-foreground" : ""
+          }`}
+        >
           {description}
         </p>
       </div>
-      <div>
-        <p>
-          {timeline}
-        </p>
+
+      <div className="text-muted-foreground">
+        <p>{timeline}</p>
       </div>
     </div>
   )
 }
+

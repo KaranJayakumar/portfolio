@@ -2,12 +2,13 @@ import { ReactNode } from "react"
 
 interface Props{
   title : string
+  className? : string
   children : ReactNode
 }
 
-export const Block = ({children, title} : Props) => {
+export const Block = ({children, title, className} : Props) => {
   return (
-    <div className="flex flex-col gap-4 my-24">
+    <div className={`flex flex-col gap-4 my-24 ${className}`}>
       <div className="flex flex-row justify-between">
         <div>
           <p>{title}</p>

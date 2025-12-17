@@ -2,7 +2,7 @@ import { Block } from "../layout/Block"
 
 export const Projects = () => {
   return (
-    <Block title="Projects">
+    <Block title="Projects" className="mb-14">
       <div className="space-y-4 text-sm">
         <div>
           <a

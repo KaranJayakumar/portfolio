@@ -6,7 +6,7 @@ export const About = () => {
   }
 
   const openSindy = () => {
-    window.open("https://sindy.ai", "_blank")
+    window.open("https://fbe.unimelb.edu.au/newsroom/from-rivals-to-revolutionaries-the-evolution-of-sincidium", "_blank")
   }
 
   const openRemember = () => {

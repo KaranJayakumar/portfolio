@@ -5,13 +5,17 @@ import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } fr
 import { ContactCard } from "../ContactCard"
 
 export const NavigationBar = () => {
+  const onExperienceClick = () => {
+    const elem = document.getElementById('Experience')
+    elem?.scrollIntoView({ behavior: "smooth"});
+  }
   return (
       <div className="flex flex-row justify-between mb-16 text-sm font-semibold">
         <div>
           <NavItem title="Karan Jayakumar" path="/"/>
         </div>
         <div className="flex flex-row h-fit text-sm underline-offset-4 gap-x-10">
-          <NavItem title="Experience" path="/"/>
+          <NavItem title="Experience" path="/" onClick={onExperienceClick}/>
           <NavItem title="Blog" path="/blogs"/>
           <HoverCard>
             <HoverCardTrigger delay={50} className="">
@@ -32,10 +36,15 @@ interface NavItemProps {
   title : string
   path : string
   className?: string
+  onClick? : () => void
 }
 
-const NavItem = ({title, path, className} : NavItemProps) => {
+const NavItem = ({title, path, className, onClick} : NavItemProps) => {
   return (
-    <Link href={path} className={`rounded-md nav-item underline ${className}`}>{title}</Link>
+      onClick ? (
+        <p onClick={onClick} className={`rounded-md cursor-pointer nav-item underline ${className}`}>{title}</p>
+      ) : (
+        <Link href={path} className={`rounded-md nav-item underline ${className}`}>{title}</Link>
+      )
   )
 }

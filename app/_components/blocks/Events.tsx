@@ -3,20 +3,57 @@ import { Block } from "../layout/Block"
 export const Events = () => {
   return (
     <Block title="Events">
-      <p className="pb-[8px] text-sm">A few communities and events I&apos;ve been frequenting lately and enjoyed.</p>
-      <ul className="text-sm space-y-2 list-disc">
-        <div className="px-4">
-          <li>
-            <a href="https://gdg.community.dev/gdg-melbourne/" className="underline hover:text-gray-600">GDG Melbourne</a> - Tends to be a lot of interesting builders here. Met a guy building a really cool geopolitical news aggregator.
-          </li>
-          <li>
-            <a href="https://www.meetup.com/rea-unstackd/" className="underline hover:text-gray-600">REA Unstackd</a> - I like to go here to engage in things that are beyond me. Always nice to have not known what a data lakehouse/warehouse is at a meetup and then learn what it is through work.
-          </li>
-          <li>
-            <a href="https://melbournecocoaheads.com/" className="underline hover:text-gray-600">Melbourne Cocoa Heads</a> - Always good to have a community of others building for mobile. Feel like it&apos;s an unexplored space.
-          </li>
+      <p className="text-sm text-muted-foreground mb-3">
+        A few communities and events I&apos;ve been frequenting lately and enjoyed.
+      </p>
+
+      <div className="space-y-4 text-sm">
+        <div>
+          <a
+            href="https://gdg.community.dev/gdg-melbourne/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium hover:underline"
+          >
+            GDG Melbourne
+          </a>
+          <p className="text-muted-foreground leading-relaxed">
+            Tends to be a lot of interesting builders here. Met someone building a
+            really cool geopolitical news aggregator.
+          </p>
         </div>
-      </ul>
+
+        <div>
+          <a
+            href="https://www.meetup.com/rea-unstackd/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium hover:underline"
+          >
+            REA Unstackd
+          </a>
+          <p className="text-muted-foreground leading-relaxed">
+            I like going here to engage with things that are beyond me. Always
+            nice to not know what a data lakehouse is at a meetup and then
+            learn it properly through work.
+          </p>
+        </div>
+
+        <div>
+          <a
+            href="https://melbournecocoaheads.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium hover:underline"
+          >
+            Melbourne Cocoa Heads
+          </a>
+          <p className="text-muted-foreground leading-relaxed">
+            Always good to have a community of people building for mobile.
+            Feels like an unexplored space.
+          </p>
+        </div>
+      </div>
     </Block>
   )
 }

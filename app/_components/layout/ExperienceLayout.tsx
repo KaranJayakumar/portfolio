@@ -44,34 +44,43 @@ export const ExperienceItem = ({
 
   return (
     <div
-      className={`flex flex-row justify-between gap-x-2 mb-4 text-sm ${
-        blogKey ? "cursor-pointer group" : ""
-      }`}
       onClick={openBlog}
+      className={`flex justify-between gap-x-4 rounded-md px-2 py-1 -mx-2 text-sm transition ${
+        blogKey
+          ? "cursor-pointer group hover:bg-muted/50"
+          : ""
+      }`}
     >
       <div className="flex flex-col mr-26">
         <div
-          className={`font-semibold items-center gap-x-2 flex flex-row${
-            blogKey ? "group-hover:underline" : ""
+          className={`flex items-center gap-x-1 font-medium ${
+            blogKey ? "group-hover:underline underline-offset-4" : ""
           }`}
         >
           {position}
           {blogKey && (
-            <ExternalLinkIcon width={14} height={14} className='pb-0.5'/>
+            <ExternalLinkIcon
+              width={14}
+              height={14}
+              className="text-muted-foreground"
+            />
           )}
         </div>
+
         <p
-          className={`text-muted-foreground ${
-            blogKey ? "group-hover:text-foreground" : ""
+          className={`leading-relaxed ${
+            blogKey
+              ? "text-muted-foreground group-hover:text-foreground"
+              : "text-muted-foreground"
           }`}
         >
           {description}
         </p>
       </div>
 
-      <div className="text-muted-foreground">
-        <p>{timeline}</p>
-      </div>
+      <p className="text-muted-foreground whitespace-nowrap">
+        {timeline}
+      </p>
     </div>
   )
 }

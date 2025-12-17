@@ -3,9 +3,8 @@ key: unimelb
 title: University of Melbourne
 date : 01/12/2025
 tags:
-    - AI
-    - Decision Making
-    - Problem Solving
+    - Unexpected Learning
+    - Personal Dev
 description: A lesson in where my interests lie.
 ---
 Working at the University of Melbourne was a solid experience, even if it wasn’t one that pushed me to my technical limits. I learnt about Python web frameworks, navigated industry CMS technologies, and got exposure to how large, real-world systems are actually maintained. While the work itself wasn’t deeply challenging from a software engineering perspective, the experience as a whole ended up being far more valuable than I initially expected.

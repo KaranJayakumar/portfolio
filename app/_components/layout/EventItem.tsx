@@ -11,9 +11,8 @@ export const EventItem = ({title, description, href} : Props) => {
   }
   return (
     <div className={`space-y-4 text-sm ${href? 'cursor-pointer' : ''}`}>
-      <div className="group hover:bg-muted/50">
+      <div className="group hover:bg-muted/50" onClick={() => openLink()}>
         <div
-          onClick={(() => openLink())}
           className="font-medium group-hover:underline"
         >
           {title}

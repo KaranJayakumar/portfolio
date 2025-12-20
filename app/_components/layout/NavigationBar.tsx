@@ -3,11 +3,13 @@ import Link from "next/link"
 import "../../styles/index.css"
 import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } from "../ui/hover-card"
 import { ContactCard } from "../ContactCard"
+import { useRouter } from "next/navigation"
+
 
 export const NavigationBar = () => {
+  const router = useRouter()
   const onExperienceClick = () => {
-    const elem = document.getElementById('Experience')
-    elem?.scrollIntoView({ behavior: "smooth"});
+    router.push("/#Experience")
   }
   return (
       <div className="flex flex-row justify-between mb-16 text-sm font-semibold">

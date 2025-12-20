@@ -3,7 +3,6 @@ import { Roboto, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { MainLayout } from "./_components/layout/MainLayout";
 import { cn } from "@/app/lib/utils";
-import { PostHogProvider } from "./hooks/PosthogProvider"
 
 const font = Roboto({
   weight : "400",
@@ -25,11 +24,9 @@ export default function RootLayout({
       <body
         className={`${font.className} flex-col antialiased justify-center items-center h-full`}
       >
-        <PostHogProvider>
-          <MainLayout>
-            {children}
-          </MainLayout>
-        </PostHogProvider>
+        <MainLayout>
+          {children}
+        </MainLayout>
       </body>
     </html>
   );

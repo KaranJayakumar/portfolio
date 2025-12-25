@@ -3,15 +3,16 @@ key: adk
 title: Guide to Building with Google’s ADK
 date: 25/12/2025
 tags:
-  - Tech
-  - Framework Development
-description: Discussion on how to use Google's ADK in Production Systems.
+  - Technical
+  - Google ADK
 ---
-I’ve seen a *lot* of discussion around OpenAI’s Agents SDK recently, and at **eesel** we’ve been experimenting with a few different Agent Development Kits. One thing I noticed pretty quickly: there’s almost no real discourse around **Google’s ADK**.
 
-And honestly? It’s not trivial to understand.
+I’ve seen a bunch of discussion around OpenAI’s Agents SDK recently, and at eesel we’ve been experimenting with a few different Agent Development Kits. One thing I noticed pretty quickly: there’s almost no real discourse around **Google’s ADK**.
 
-So this post is my attempt at a small, practical guide based on actually wiring ADK into a production system.
+And honestly, it’s not the easiest to set up, pretty similar to all the other Agent SDK systems :)
+
+So this post is my small, practical guide based on actually wiring ADK into a production system. I'll likely be adding to this as I gain 
+experience with the system. 
 
 ---
 
@@ -72,6 +73,28 @@ agent = LlmAgent(
         )
     ),
 )
+```
+
+You almost never want to call `agent.run_async()` directly. Instead, you should run the agent via a **`Runner`**, which wires up sessions, persistence, and lifecycle hooks:
+
+```python
+from google.adk.runners import Runner
+from google.adk.agents.run_config import RunConfig, StreamingMode
+from google.genai.types import Content, Part
+
+runner = Runner(
+    agent=agent,
+    app_name="eesel",
+    session_service=session_service,
+)
+
+async for event in runner.run_async(
+    user_id="user",
+    session_id=task_id,
+    new_message=Content(role="user", parts=[Part(text=input_message)]),
+    run_config=RunConfig(streaming_mode=StreamingMode.SSE),
+):
+    handle_event(event)
 ```
 
 ---
@@ -140,6 +163,23 @@ If you’re doing anything real in production, you’ll end up implementing your
 
 ## Parsing events (aka personal hell)
 
+Before we even get into parsing, you need to be aware of one ADK-specific landmine: **MCP responses are not plain dicts**. When a tool executes via MCP, ADK swaps the response type under the hood.
+
+To normalize this, you *must* call `FunctionResponse.from_mcp_response(...)`.
+
+Here’s the minimal pattern you’ll want everywhere:
+
+```python
+from google.genai.types import FunctionResponse
+
+response = FunctionResponse.from_mcp_response(
+    name=tool_name,
+    response=mcp_result,
+).response
+```
+
+If you skip this step, your event parser *will* explode in subtle ways.
+
 Every agent framework invents its own `Event` interface. ADK is no exception.
 
 You *will* need to normalize ADK events into your own internal format.
@@ -157,9 +197,11 @@ def parse_event(self, event: Event):
         return None
 
     for part in event.content.parts:
+        # Normal text tokens
         if part.text:
             return ResponseChunk(type="message", content=part.text)
 
+        # Tool invocation
         elif part.function_call:
             return ResponseChunk(
                 type="tool_call",
@@ -167,8 +209,16 @@ def parse_event(self, event: Event):
                 tool_arguments=dict(part.function_call.args or {}),
             )
 
+        # Tool response (MCP)
         elif part.function_response:
-            response = part.function_response.response or {}
+            # ADK lies here: this is *not* always Dict[str, Any]
+            mcp_payload = (part.function_response.response or {}).get("result", {})
+
+            response = FunctionResponse.from_mcp_response(
+                name=str(part.function_response.name),
+                response=mcp_payload,
+            ).response or {}
+
             is_error = "error" in response
 
             return ResponseChunk(

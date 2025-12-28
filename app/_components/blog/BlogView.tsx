@@ -1,34 +1,48 @@
 "use server"
-import { loadBlog } from '@/app/utils/parsing';
+
+import { loadBlog } from "@/app/utils/parsing"
 import "@/app/styles/blog.css"
-import { Streamdown } from 'streamdown';
+import { Streamdown } from "streamdown"
 
 interface BlogViewParams {
-  blogKey : string
+  blogKey: string
 }
 
-export const BlogView = async ({blogKey} : BlogViewParams) => {
+export const BlogView = async ({ blogKey }: BlogViewParams) => {
   const blog = await loadBlog(blogKey)
-  if(!blog){
-    return null
-  }
-  return (
-    <>
-      <h1 className="text-xl font-semibold mb-2">
-        {blog.title}
-      </h1>
-      <div className="flex md:flex-row flex-col md:gap-0 gap-4justify-between w-full">
-        <p className="text-sm font-semibold mb-2 text-gray-500">
-          {blog.description}
-        </p>
-        <p className="text-sm font-bold mb-4">
-          {blog.date}
-        </p>
+  if (!blog) return null
 
+  return (
+    <article className="w-full flex">
+      <div className="w-full max-w-3xl">
+        {/* Header */}
+        <header className="mb-8">
+          <h1 className="text-2xl md:text-3xl font-semibold leading-tight">
+            {blog.title}
+          </h1>
+
+          <time
+            className="mt-2 block text-sm text-gray-400"
+            dateTime={blog.date}
+          >
+            {blog.date}
+          </time>
+
+          {blog.description && (
+            <p className="mt-3 text-sm text-gray-500 max-w-prose">
+              {blog.description}
+            </p>
+          )}
+        </header>
+
+        {/* Content */}
+        <div className="blog">
+          <Streamdown className="text-[15px] leading-relaxed">
+            {blog.content}
+          </Streamdown>
+        </div>
       </div>
-      <div className='md:w-[70%] blog w-fit'>
-        <Streamdown className='text-[15px]'>{blog.content}</Streamdown>
-      </div>
-    </>
+    </article>
   )
 }
+

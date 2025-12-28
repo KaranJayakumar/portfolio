@@ -51,13 +51,15 @@ export const ExperienceItem = ({
           : ""
       }`}
     >
-      <div className="flex flex-col mr-26">
+      <div className="flex flex-col min-w-0 md:mr-26">
         <div
           className={`flex items-center gap-x-1 font-medium ${
             blogKey ? "group-hover:underline underline-offset-4" : ""
           }`}
         >
-          {position}
+          <p className="inline-block max-w-full break-words">
+            {position}
+          </p>
           {blogKey && (
             <ExternalLinkIcon
               width={14}

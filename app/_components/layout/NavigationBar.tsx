@@ -4,6 +4,7 @@ import "../../styles/index.css"
 import { HoverCard, HoverCardContent, HoverCardPositioner, HoverCardTrigger } from "../ui/hover-card"
 import { ContactCard } from "../ContactCard"
 import { useRouter } from "next/navigation"
+import { Popover } from "@base-ui/react"
 
 
 export const NavigationBar = () => {
@@ -19,16 +20,19 @@ export const NavigationBar = () => {
         <div className="flex flex-row h-fit text-sm underline-offset-4 gap-x-10">
           <NavItem title="Experience" path="/" onClick={onExperienceClick}/>
           <NavItem title="Blog" path="/blogs"/>
-          <HoverCard>
-            <HoverCardTrigger delay={50} className="">
-                <div className={`rounded-md underline`}>{'Contact'}</div>
-            </HoverCardTrigger>
-            <HoverCardPositioner sideOffset={10} className='mr-6'>
-              <HoverCardContent className="bg-white duration-[800]">
-                <ContactCard/>
-              </HoverCardContent>
-            </HoverCardPositioner>
-          </HoverCard>
+<Popover.Root>
+            <Popover.Trigger className="rounded-md underline cursor-pointer nav-item">
+              Contact
+            </Popover.Trigger>
+            <Popover.Portal>
+              <Popover.Backdrop className="bg-black/20 backdrop-blur-sm"/>
+              <Popover.Positioner>
+                <Popover.Popup className="bg-white rounded-lg shadow-lg p-4 border border-gray-200">
+                  <ContactCard/>
+                </Popover.Popup>
+              </Popover.Positioner>
+            </Popover.Portal>
+          </Popover.Root>
         </div>
       </div>
   )

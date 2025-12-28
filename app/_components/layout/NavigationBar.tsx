@@ -13,15 +13,15 @@ export const NavigationBar = () => {
     router.push("/#Experience")
   }
   return (
-      <div className="flex flex-row justify-between mb-16 text-sm font-semibold">
+      <div className="flex flex-row justify-between mb-16 text-sm font-semibold items-center">
         <div>
           <NavItem title="Karan Jayakumar" path="/"/>
         </div>
-        <div className="flex flex-row h-fit text-sm underline-offset-4 gap-x-10">
+        <div className="flex flex-row h-fit text-sm gap-x-10">
           <NavItem title="Experience" path="/" onClick={onExperienceClick}/>
           <NavItem title="Blog" path="/blogs"/>
 <Popover.Root>
-            <Popover.Trigger className="rounded-md underline cursor-pointer nav-item">
+            <Popover.Trigger className="rounded-md underline underline-offset-4 cursor-pointer nav-item">
               Contact
             </Popover.Trigger>
             <Popover.Portal>
@@ -48,9 +48,9 @@ interface NavItemProps {
 const NavItem = ({title, path, className, onClick} : NavItemProps) => {
   return (
       onClick ? (
-        <p onClick={onClick} className={`rounded-md cursor-pointer nav-item underline ${className}`}>{title}</p>
+        <p onClick={onClick} className={`rounded-md cursor-pointer nav-item underline underline-offset-4 ${className}`}>{title}</p>
       ) : (
-        <Link href={path} className={`rounded-md nav-item underline ${className}`}>{title}</Link>
+        <Link href={path} className={`rounded-md nav-item underline underline-offset-4 ${className}`}>{title}</Link>
       )
   )
 }

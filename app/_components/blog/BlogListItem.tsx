@@ -13,15 +13,15 @@ export function BlogListItem({ blog }: ListItemProps) {
 
   return (
     <div
-      className="cursor-pointer py-[10px]"
+      className="cursor-pointer py-[20px]"
       onClick={() => router.push(`/blogs/${blog.key}`)}
     >
-      <p className="font-bold pb-[4px]">{blog.title}</p>
+      <p className="font-bold pb-[4px] text-sm">{blog.title}</p>
       <p className="text-sm text-gray-600">{blog.description}</p>
       {
         blog.tags?.map((tag, index) => {
           return (
-            <Badge key={index} className='mt-2 rounded-lg border border-gray-400 mr-2 text-xs bg-white text-black font-thin'>{tag}</Badge>
+            <Badge key={index} className='mt-2 rounded-lg border border-gray-400 mr-2 text-[10px] bg-white text-black font-thin'>{tag}</Badge>
           )
         })
       }

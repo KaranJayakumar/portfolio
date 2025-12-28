@@ -17,7 +17,7 @@ export const BlogView = async ({blogKey} : BlogViewParams) => {
       <h1 className="text-xl font-semibold mb-2">
         {blog.title}
       </h1>
-      <div className="flex flex-row justify-between w-full">
+      <div className="flex md:flex-row flex-col md:gap-0 gap-4justify-between w-full">
         <p className="text-sm font-semibold mb-2 text-gray-500">
           {blog.description}
         </p>
@@ -26,7 +26,7 @@ export const BlogView = async ({blogKey} : BlogViewParams) => {
         </p>
 
       </div>
-      <div className='w-[70%] blog'>
+      <div className='md:w-[70%] blog w-fit'>
         <Streamdown className='text-[15px]'>{blog.content}</Streamdown>
       </div>
     </>

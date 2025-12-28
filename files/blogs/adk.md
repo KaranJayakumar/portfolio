@@ -2,6 +2,7 @@
 key: adk
 title: Guide to Building with Google’s ADK
 date: 25/12/2025
+description: Wiring up ADK and weird setbacks.
 tags:
   - Technical
   - Google ADK

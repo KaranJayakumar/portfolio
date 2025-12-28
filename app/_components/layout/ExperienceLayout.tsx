@@ -10,9 +10,9 @@ import { ExternalLinkIcon } from "lucide-react"
 export const ExperienceLayout = ({children} : LayoutProps) => {
   return (
     <div className="flex flex-col gap-4 my-24" id="Experience">
-      <div className="flex flex-row justify-between">
+      <div className="flex md:flex-row flex-col md:gap-0 gap-4 justify-between">
         <div>
-          <p>{"Experience"}</p>
+          <p className="md:font-normal font-semibold">{"Experience"}</p>
         </div>
         <div>
           {children}

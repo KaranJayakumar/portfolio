@@ -15,10 +15,10 @@ export default function Home() {
             color="#5156F7"
             backgroundColor="#F0EFFF"
           />.
-          <span className="block sm:inline"> I used to work at </span>
-          <TextLink
-            href="https://www.eesel.ai/"
-          >eesel</TextLink>.
+          <span className="mt-2 block sm:mt-0 sm:inline">
+            {" "}I used to work at{" "}
+            <TextLink href="https://www.eesel.ai/">eesel</TextLink>.
+          </span>
         </span>
       </h1>
 

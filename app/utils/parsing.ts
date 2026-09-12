@@ -38,7 +38,14 @@ export async function loadBlogs() : Promise<Blog[]> {
         }
       }
     }
-    return results
+    return results.sort((a, b) => {
+      const [aDay, aMonth, aYear] = a.date.split('/').map(Number)
+      const [bDay, bMonth, bYear] = b.date.split('/').map(Number)
+      const aTime = Date.UTC(aYear, aMonth - 1, aDay)
+      const bTime = Date.UTC(bYear, bMonth - 1, bDay)
+
+      return bTime - aTime
+    })
   }catch(e){
     console.error("Error retrieving blogs", e)
     return []

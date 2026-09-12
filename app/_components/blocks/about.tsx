@@ -1,4 +1,4 @@
-import { Block } from "../layout/Block"
+import { Block } from "../layout/block"
 
 export const About = () => {
   const openEesel = () => {
@@ -58,4 +58,3 @@ export const About = () => {
     </Block>
   )
 }
-

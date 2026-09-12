@@ -1,5 +1,5 @@
-import { Block } from "../layout/Block"
-import { EventItem } from "../layout/EventItem"
+import { Block } from "../layout/block"
+import { EventItem } from "../layout/event-item"
 
 export const Events = () => {
   return (
@@ -17,4 +17,3 @@ export const Events = () => {
     </Block>
   )
 }
-

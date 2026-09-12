@@ -13,8 +13,8 @@ export const BlogView = async ({ blogKey }: BlogViewParams) => {
   if (!blog) return null
 
   return (
-    <article className="w-full flex">
-      <div className="w-full max-w-3xl">
+    <article className="mx-auto w-full max-w-2xl">
+      <div className="w-full">
         {/* Header */}
         <header className="mb-8">
           <h1 className="text-2xl md:text-3xl font-semibold leading-tight">
@@ -45,4 +45,3 @@ export const BlogView = async ({ blogKey }: BlogViewParams) => {
     </article>
   )
 }
-

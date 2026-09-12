@@ -2,11 +2,8 @@ import { BlogList } from "../_components/blog/BlogList";
 
 export default function Blog() {
   return (
-    <div className="">
-      <h1 className="font-semibold pb-4 text-4xl">
-        {"Things I'm Thinking About"}
-      </h1>
+    <main className="mx-auto w-full max-w-5xl">
       <BlogList/>
-    </div>
+    </main>
   );
 }

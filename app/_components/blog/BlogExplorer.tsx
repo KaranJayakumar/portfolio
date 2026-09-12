@@ -21,7 +21,7 @@ export function BlogExplorer({ blogs }: BlogExplorerProps) {
     : blogs;
 
   return (
-    <div className="grid gap-8 md:grid-cols-[10rem_minmax(0,1fr)] md:gap-x-20 md:gap-y-8">
+    <div className="grid min-h-[36rem] w-full content-start gap-8 md:grid-cols-[10rem_minmax(0,1fr)] md:gap-x-20 md:gap-y-8">
       <h1 className="text-4xl font-semibold tracking-tight md:col-start-2">
         Things I&apos;m Thinking About
       </h1>

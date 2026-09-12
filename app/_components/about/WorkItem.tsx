@@ -2,42 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface WorkItemProps {
-  company: string;
+  name: string;
   tagline: string;
-  logoSrc?: string;
-  logoText?: string;
-  logoClassName?: string;
+  logoSrc: string;
   href?: string;
 }
 
 export function WorkItem({
-  company,
+  name,
   tagline,
   logoSrc,
-  logoText,
-  logoClassName = "bg-gray-200 text-gray-700",
   href,
 }: WorkItemProps) {
   const content = (
     <>
-      {logoSrc ? (
-        <span className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5">
-          <Image
-            src={logoSrc}
-            alt=""
-            width={48}
-            height={48}
-            className="size-full object-contain"
-          />
-        </span>
-      ) : (
-        <span className={`flex size-12 shrink-0 items-center justify-center rounded-xl text-lg font-semibold ${logoClassName}`}>
-          {logoText ?? company.charAt(0)}
-        </span>
-      )}
-
+      <span className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5">
+        <Image
+          src={logoSrc}
+          alt=""
+          width={48}
+          height={48}
+          className="size-full object-contain"
+        />
+      </span>
       <span className="min-w-0 text-left">
-        <span className="block font-medium text-gray-950">{company}</span>
+        <span className="block font-medium text-gray-950">{name}</span>
         <span className="mt-0.5 block text-sm leading-5 text-gray-500">
           {tagline}
         </span>

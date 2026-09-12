@@ -30,37 +30,37 @@ export default function AboutPage() {
 
         <WorkItemList>
           <WorkItem
-            company="Lyra"
+            name="Lyra"
             tagline="Governance for AI Agents @ CTGT"
             logoSrc="/logos/lyra.png"
             href="https://lyratechnologies.com.au/"
           />
           <WorkItem
-            company="eesel"
+            name="eesel"
             tagline="AI Agents for Customer Service"
             logoSrc="/logos/eesel.png"
             href="https://www.eesel.ai/"
           />
           <WorkItem
-            company="University of Melbourne"
+            name="University of Melbourne"
             tagline="Data pipelines for researchers"
             logoSrc="/logos/unimelb.svg"
             href="/blogs/unimelb"
           />
           <WorkItem
-            company="Sincidium"
+            name="Sincidium"
             tagline="AI Agents for Students & Universities"
             logoSrc="/logos/sincidium.png"
             href="https://fbe.unimelb.edu.au/newsroom/from-rivals-to-revolutionaries-the-evolution-of-sincidium"
           />
           <WorkItem
-            company="Melbourne Space Program"
+            name="Melbourne Space Program"
             tagline="Building a Robot Bartender :)"
             logoSrc="/logos/melbourne-space-program.png"
             href="https://www.melbournespace.com.au/"
           />
           <WorkItem
-            company="KFC"
+            name="KFC"
             tagline="Probably my most valuable work experience"
             logoSrc="/logos/kfc.svg"
             href="https://www.kfc.com.au/"

@@ -5,7 +5,6 @@ date: 25/12/2025
 description: Wiring up ADK and weird setbacks.
 tags:
   - Technical
-  - Google ADK
 ---
 
 I’ve seen a bunch of discussion around OpenAI’s Agents SDK recently, and at eesel we’ve been experimenting with a few different Agent Development Kits. One thing I noticed pretty quickly: there’s almost no real discourse around **Google’s ADK**.

@@ -3,9 +3,7 @@ key: eesel
 title: Life at a Startup
 date : 01/12/2025
 tags:
-    - AI
-    - Decision Making
-    - Problem Solving
+    - Learning
 description: A brief introspection of all the lessons I've learnt working at eesel AI
 ---
 Working at a fast-growing AI startup has taught me an infinite number of lessons that have made me a better engineer. The key aspects of this are summarised below. <br/> <br/>

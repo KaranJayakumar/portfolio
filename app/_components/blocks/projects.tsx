@@ -1,4 +1,4 @@
-import { Block } from "../layout/Block"
+import { Block } from "../layout/block"
 
 export const Projects = () => {
   return (
@@ -38,4 +38,3 @@ export const Projects = () => {
     </Block>
   )
 }
-

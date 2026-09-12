@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Public_Sans } from "next/font/google";
 import "./globals.css";
-import { MainLayout } from "./_components/layout/MainLayout";
+import { MainLayout } from "./_components/layout/main-layout";
 import { cn } from "@/app/lib/utils";
 
 const font = Roboto({

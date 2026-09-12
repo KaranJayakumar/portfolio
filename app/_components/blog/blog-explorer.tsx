@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Blog } from "@/app/types";
-import { BlogListItem } from "./BlogListItem";
+import { BlogListItem } from "./blog-list-item";
 
 interface BlogExplorerProps {
   blogs: Blog[];

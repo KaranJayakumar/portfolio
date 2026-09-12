@@ -1,4 +1,4 @@
-import { BlogView } from "@/app/_components/blog/BlogView"
+import { BlogView } from "@/app/_components/blog/blog-view"
 
 export default async function Page({
   params,

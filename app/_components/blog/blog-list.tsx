@@ -1,5 +1,5 @@
 "use server"
-import { BlogExplorer } from './BlogExplorer';
+import { BlogExplorer } from './blog-explorer';
 import { loadBlogs } from '@/app/utils/parsing';
 
 export const BlogList = async () => {

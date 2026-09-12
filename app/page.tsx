@@ -1,4 +1,4 @@
-import { CompanyLink } from "./_components/ui/company-link";
+import { CompanyLink } from "./_components/work/CompanyLink";
 import { TextLink } from "./_components/ui/text-link";
 
 export default function Home() {

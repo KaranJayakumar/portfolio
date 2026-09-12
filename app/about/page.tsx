@@ -1,5 +1,5 @@
-import { WorkItem } from "../_components/about/WorkItem";
-import { WorkItemList } from "../_components/about/WorkItemList";
+import { WorkItem } from "../_components/work/WorkItem";
+import { WorkItemList } from "../_components/work/WorkItemList";
 
 export default function AboutPage() {
   return (

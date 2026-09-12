@@ -32,11 +32,11 @@ export default function Home() {
             <TextLink href="/blogs">Blog</TextLink>
           </li>
           <li>
-            <TextLink href="/experience">Experience</TextLink>
+            <TextLink href="/about">About Me</TextLink>
           </li>
           <li>
             <TextLink href="https://calendar.app.google/4Vr8TfsNmLjUEPTc9">
-              Talk to Me
+              Chat
             </TextLink>
           </li>
         </ul>

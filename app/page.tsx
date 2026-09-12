@@ -14,17 +14,11 @@ export default function Home() {
             logoSrc="/logos/lyra.png"
             color="#5156F7"
             backgroundColor="#F0EFFF"
-            className="text-[0.72em]"
           />.
           <span className="block sm:inline"> I used to work at </span>
-          <CompanyLink
-            name="eesel"
+          <TextLink
             href="https://www.eesel.ai/"
-            logoSrc="/logos/eesel.png"
-            color="#287DBD"
-            backgroundColor="#EFF7FC"
-            className="text-[0.72em]"
-          />.
+          >eesel</TextLink>.
         </span>
       </h1>
 

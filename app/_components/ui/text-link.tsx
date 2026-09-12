@@ -16,10 +16,7 @@ export function TextLink({ href, children, className }: TextLinkProps) {
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className={cn(
-        "inline-flex rounded-sm px-1 py-0.5 leading-none underline decoration-1 underline-offset-4 transition-colors hover:bg-[#D7E2E9] focus-visible:outline-2 focus-visible:outline-offset-2",
-        className,
-      )}
+      className={cn("underline decoration-1 underline-offset-4 hover:text-gray-600", className)}
     >
       {children}
     </Link>

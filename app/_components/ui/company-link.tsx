@@ -6,7 +6,7 @@ import { cn } from "@/app/lib/utils";
 interface CompanyLinkProps {
   name: string;
   href: string;
-  logoSrc: string;
+  logoSrc?: string;
   color: string;
   backgroundColor: string;
   className?: string;
@@ -26,23 +26,25 @@ export function CompanyLink({
       target="_blank"
       rel="noreferrer"
       className={cn(
-        "ml-[0.08em] inline-flex items-center gap-[0.28em] whitespace-nowrap rounded-full border px-[0.38em] py-[0.16em] align-[0.06em] font-semibold leading-none tracking-normal transition-[filter] hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2",
+        "inline-flex items-center rounded-full border px-4 py-2 gap-2 font-semibold leading-none tracking-normal transition-[filter] hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2",
         className,
       )}
       style={{
         color,
         backgroundColor,
         borderColor: `color-mix(in srgb, ${color} 25%, transparent)`,
-      } as CSSProperties}
+      }}
       aria-label={`${name} website (opens in a new tab)`}
     >
-      <Image
-        src={logoSrc}
-        alt=""
-        width={32}
-        height={32}
-        className="size-[0.82em] rounded-[0.22em]"
-      />
+      {logoSrc && (
+        <Image
+          src={logoSrc}
+          alt=""
+          width={32}
+          height={32}
+          className="size-9 rounded-sm"
+        />
+      )}
       <span>{name}</span>
     </Link>
   );

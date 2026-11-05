@@ -1,5 +1,5 @@
 ---
-key: Learnings @ CTGT
+key: learnings_at_ctgt
 title: Learnings @ CTGT
 date: 5/11/2026
 description: Another collection of stuff I learned while working at CTGT in no real order.
